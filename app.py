@@ -6,7 +6,7 @@ from whitenoise import WhiteNoise  # treat like black box
 app = Flask(__name__)
 app.wsgi_app = WhiteNoise(app.wsgi_app,
                           root='static/',
-                          prefix='static/',
+                          prefix='',
                           index_file="index.htm",
                           autorefresh=True)  # plug into flask something to help us send files, needs root and prefix
 
@@ -19,3 +19,4 @@ def hello():
 
 if __name__ == "__main__":
     app.run(threaded=True, port=5000)
+1
